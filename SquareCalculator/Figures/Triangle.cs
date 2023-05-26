@@ -9,6 +9,10 @@ public class Triangle : ISquareProvider
     public double B { get; private set; }
     public double C { get; private set; }
 
+    public bool IsRight => (A * A + B * B) == C * C || 
+                           (A * A + C * C) == B * B || 
+                           (B * B + C * C) == A * A;
+
     public double Square => CalculateSquare();
     /// <summary>
     /// Initialize a new instance of <see cref="Triangle"/> class with edges <paramref name="a"/>, <paramref name="b"/>, <paramref name="c"/>
@@ -40,4 +44,5 @@ public class Triangle : ISquareProvider
             return true;
         return false;
     }
+
 }
