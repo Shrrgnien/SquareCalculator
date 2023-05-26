@@ -1,6 +1,7 @@
 ﻿using SquareCalculator.Interfaces;
+using SquareCalculator.Exceptions;
 
-namespace SquareCalculator.Models;
+namespace SquareCalculator.Figures;
 
 public class Triangle : ISquareProvider
 {
@@ -9,7 +10,13 @@ public class Triangle : ISquareProvider
     public double C { get; private set; }
 
     public double Square => CalculateSquare();
-
+    /// <summary>
+    /// Initialize a new instance of <see cref="Triangle"/> class with edges <paramref name="a"/>, <paramref name="b"/>, <paramref name="c"/>
+    /// </summary>
+    /// <param name="a">Edge A</param>
+    /// <param name="b">Edge B</param>
+    /// <param name="c">Edge C</param>
+    /// <exception cref="TriangleNotExistException"></exception>
     public Triangle(double a, double b, double c)
     {
         if (!TriangleExists(a, b, c))

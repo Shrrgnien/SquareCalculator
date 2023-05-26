@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace SquareCalculator.Models
+namespace SquareCalculator.Exceptions
 {
     [Serializable]
     public class CircleNotExistException : Exception
